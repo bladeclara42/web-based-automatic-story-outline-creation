@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main role="main">
+   <div class="container-fluid bg-color-light-pink d-flex align-items-center justify-content-center"
+      style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; margin-top:55px;">
+      <!-- Use container-fluid class instead of row -->
+      <div class="row">
+         <div class="col d-flex align-items-center justify-content-center mb-5">
+            <div class="container">
+               <h1 class="font-hapiness text-center color-pink">Hasil Evaluasi pada Output dengan menggunakan BLEU dan
+                  ROUGE</h1>
+               <div class="container mt-5">
+                  <div class="row">
+                     <div class="col-md-6 d-flex flex-column justify-content-center ">
+                        <h3 class="text-center color-pink text-center font-hapiness">BLEU</h3>
+                        <p class="text-center color-pink text-center font-hapiness">Akumulatif 2-gram :{{ output_bleu_2 }}
+                           <p class="text-center color-pink text-center font-hapiness">Akumulatif 3-gram
+                              :{{ output_bleu_3 }}
+                           </p>
+                           <p class="text-center color-pink text-center font-hapiness">Akumulatif 4-gram
+                              :{{ output_bleu_4 }}
+                           </p>
+                     </div>
+                     <div class="col-md-6 d-flex mx-auto flex-column justify-content-center">
+                        <h3 class="text-center color-pink text-center font-hapiness">ROUGE</h3>
+                        <p class="text-center color-pink text-center font-hapiness">ROUGE 1 F1 Score
+                           :{{ rouge1_fmeasure }}
+                        </p>
+                        <p class="text-center color-pink text-center font-hapiness">ROUGE 2 F1 Score
+                           :{{ rouge2_fmeasure }}
+                        </p>
+                        <p class="text-center color-pink text-center font-hapiness">ROUGE L F1 Score
+                           :{{ rougeL_fmeasure }}
+                        </p>
+
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col">
+            <div class="container mx-5">
+               <h3 class="mt-4 color-pink font-tsuku">Summary</h3>
+               <div class="card" style="width: 54rem;">
+                  <div class="card-body">
+                     <p class="color-pink font-tsuku" style="font-size: 140%;">{{ summary }}</p>
+                  </div>
+               </div>
+            </div>
+            </form>
+         </div>
+      </div>
+   </div>
+   </div>
+</main>
+
+<!-- <main role="main">
+   <div class="container">
+      <h1>Generated Output</h1>
+      <div class="card">
+         <div class="card-body">
+            <p>{{ generated_intro }}</p>
+         </div>
+      </div>
+      <div class="card">
+         <div class="card-body">
+            <p>{{ generated_climax }}</p>
+         </div>
+      </div>
+      <div class="card">
+         <div class="card-body">
+            <p>{{ generated_resolution }}</p>
+         </div>
+      </div>
+   </div>
+</main> -->
+
+{% endblock %}

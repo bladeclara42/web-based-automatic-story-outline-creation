@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main role="main">
+   <div class="container-fluid bg-color-light-pink d-flex align-items-center justify-content-center"
+      style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; margin-top:55px;">
+      <!-- Use container-fluid class instead of row -->
+      <div class="row">
+         <div class="col d-flex align-items-center justify-content-center">
+            <div class="container">
+               <div class="row">
+                  <h1 class="font-hapiness text-center color-pink">Masukkan Kalimat Prompt yang ingin digenerate</h1>
+               </div>
+
+            </div>
+         </div>
+         <div class="col">
+            <div class="container">
+               <div>
+                  <form id="generateForm" method="POST" action="/generate-output">
+                     <div class="form-group">
+                        <div class="d-flex mx-auto justify-content-center">
+                           <label for="inputText" class="font-tsuku color-pink">Enter Input Text:</label>
+                        </div>
+                        <div class="d-flex mx-auto justify-content-center">
+                           <textarea class="form-control border-color-pink font-tsuku textarea-input width-textarea-500"
+                              id="inputText" name="input_text" rows="5" placeholder="Masukkan input text"
+                              style="color: #FF24B5;"></textarea>
+                        </div>
+
+                     </div>
+                     <div class="d-flex gap-2 mx-auto justify-content-center">
+                        <button type="button"
+                           class="btn btn-primary btn-lg bg-color-pink rounded-button border-color-pink font-hapiness width-submit-button-500"
+                           onclick="submitForm()" id="submitButton">Generate Sekarang</button>
+                     </div>
+                  </form>
+               </div>
+
+
+               <div id="loading" class="text-center color-pink text-center p-5 font-hapiness" style="display: none;">
+                  Tunggu Sebentar ya, sedang digenerate
+               </div>
+
+
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+
+<script>
+   function submitForm() {
+      var button = document.getElementById("submitButton");
+      button.disabled = true;
+      document.getElementById("loading").style.display = "block";
+      document.getElementById("generateForm").submit();
+   }
+</script>
+
+{% endblock %}

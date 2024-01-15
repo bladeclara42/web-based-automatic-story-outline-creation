@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main role="main">
+   <div class="container-fluid bg-color-light-pink d-flex align-items-center justify-content-center"
+      style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; margin-top:55px;">
+      <!-- Use container-fluid class instead of row -->
+      <div class="row">
+         <div class="col d-flex align-items-center justify-content-center ">
+            <div class="container">
+               <h1 class="font-hapiness text-center color-pink mb-5">Kerangka Cerita Berhasil Digenerate</h1>
+
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-6 d-flex justify-content-center">
+                        <form id="form_refresh" method="POST" action="/generate-output">
+                           <input type="hidden" name="input_text" value="{{ data_input }}">
+                           <button type="submit"
+                              class="btn btn-primary btn-lg bg-color-pink rounded-button border-color-pink font-hapiness width-submit-button-300"
+                              id="submitButton">Generate Ulang</button>
+                        </form>
+                     </div>
+                     <div class="col-md-6 d-flex mx-auto justify-content-center">
+                        <form id="form_eval" method="POST" action="/evaluation">
+                           <input type="hidden" name="output_text" value="{{ data_output }}">
+                           <button type="submit"
+                              class="btn btn-primary btn-lg bg-color-pink rounded-button border-color-pink font-hapiness width-submit-button-300"
+                              id="submitEvaluation">Evaluasi Output</button>
+                        </form>
+                     </div>
+
+                  </div>
+                  <div id="loading" class="text-center color-pink text-center p-5 font-hapiness" style="display: none;">
+                     Tunggu Sebentar ya, sedang digenerate ulang
+                  </div>
+                  <div class="container">
+                     <div class="row">
+                        <div class="col d-flex mx-auto justify-content-center align-items-center mt-3">
+                           <button
+                              class="btn btn-primary btn-lg bg-color-pink rounded-button border-color-pink font-hapiness width-submit-button-300"
+                              id="copyText" onclick="copyToClipboard('{{ all_output }}')">Salin output beserta
+                              token</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+
+            </div>
+         </div>
+         <div class="row">
+            <div class="col">
+               <div class="container mx-5">
+                  <h5 class="color-pink font-tsuku">Exposition</h5>
+                  <div class="card" style="width: 54rem;">
+                     <div class="card-body">
+                        <p class="color-pink font-tsuku">{{ generated_exposition }}</p>
+                     </div>
+                  </div>
+                  <h5 class="mt-4 color-pink font-tsuku">Rising action</h5>
+                  <div class="card" style="width: 54rem;">
+                     <div class="card-body">
+                        <p class="color-pink font-tsuku">{{ generated_rising_action }}</p>
+                     </div>
+                  </div>
+                  <h5 class="mt-4 color-pink font-tsuku">Climax</h5>
+                  <div class="card" style="width: 54rem;">
+                     <div class="card-body">
+                        <p class="color-pink font-tsuku">{{ generated_climax }}</p>
+                     </div>
+                  </div>
+                  <h5 class="mt-4 color-pink font-tsuku">Falling Action</h5>
+                  <div class="card" style="width: 54rem;">
+                     <div class="card-body">
+                        <p class="color-pink font-tsuku">{{ generated_falling_action }}</p>
+                     </div>
+                  </div>
+                  <h5 class="mt-4 color-pink font-tsuku">Resolution</h5>
+                  <div class="card" style="width: 54rem;">
+                     <div class="card-body">
+                        <p class="color-pink font-tsuku">{{ generated_resolution }}</p>
+                     </div>
+                  </div>
+               </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+
+<!-- <main role="main">
+   <div class="container">
+      <h1>Generated Output</h1>
+      <div class="card">
+         <div class="card-body">
+            <p>{{ generated_intro }}</p>
+         </div>
+      </div>
+      <div class="card">
+         <div class="card-body">
+            <p>{{ generated_climax }}</p>
+         </div>
+      </div>
+      <div class="card">
+         <div class="card-body">
+            <p>{{ generated_resolution }}</p>
+         </div>
+      </div>
+   </div>
+</main> -->
+
+<script>
+   function copyToClipboard(textToCopy) {
+      navigator.clipboard.writeText(textToCopy).then(function () {
+         alert('Text copied to clipboard!');
+      }).catch(function (err) {
+         console.error('Unable to copy text to clipboard', err);
+      });
+   }
+
+   function submitForm() {
+      var button = document.getElementById("submitButton");
+      button.disabled = true;
+      document.getElementById("loading").style.display = "block";
+      document.getElementById("form_refresh").submit();
+   }
+</script>
+
+{% endblock %}

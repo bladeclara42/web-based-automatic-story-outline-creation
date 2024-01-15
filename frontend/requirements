@@ -1,0 +1,6 @@
+aiofiles
+jinja2
+starlette
+uvicorn
+transformers (also auto install pytorch)
+(pip) python-multipart

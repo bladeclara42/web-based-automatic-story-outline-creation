@@ -1,0 +1,10 @@
+@font-face {
+   font-family: "PopHapiness";
+   src: url(../fonts/FOT-PopHappinessStd-EB.otf);
+}
+
+@font-face {
+   font-family: "TsukuBMin";
+   src: url(../fonts/FOT-TsukuBMinPr6N-L.otf);
+   font-weight: 300;
+}

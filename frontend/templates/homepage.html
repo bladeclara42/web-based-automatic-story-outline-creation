@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main role="main" class="bg-color-pink">
+   <div class="container-fluid bg-color-light-pink  align-items-center justify-content-center">
+      <!-- Use container-fluid class instead of row -->
+      <div class="row">
+         <div class="col align-items-center justify-content-center">
+            <div class="container my-10">
+               <h1 class="font-hapiness text-center color-pink font-60">Buat kerangka ceritamu sendiri dengan AI</h1>
+            </div>
+         </div>
+      </div>
+      <div class="row  ">
+         <div class="col d-flex align-items-center justify-content-center ">
+            <div class="container my-3">
+               <!-- <h1 class="font-hapiness text-center color-pink">Masukkan Kalimat Prompt yang ingin digenerate</h1> -->
+               <img width="50%" height="50%"
+                  src="{{ url_for('static', path='images/pngwing-edited.png') }}"
+                  alt="chibi borrowing a pencil" class="mx-auto d-block">
+            </div>
+         </div>
+         <div class="col">
+            <div class="container my-10">
+               <h1 class="font-hapiness text-center color-pink font-50 my-3">Buat Ceritamu Disini</h1>
+               <div class="d-flex gap-2 mx-auto justify-content-center">
+                  <button onClick="window.location.href='./input';"
+                     class="btn btn-primary btn-lg bg-color-pink rounded-button border-color-pink font-hapiness width-submit-button-500 font-40 my-3">Mulai</button>
+               </div>
+
+            </div>
+         </div>
+      </div>
+</main>
+
+{% endblock %}

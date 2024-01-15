@@ -1,0 +1,152 @@
+/* fonts  */
+
+.font-hapiness {
+   font-family: "PopHapiness";
+}
+
+.font-tsuku {
+   font-family: "TsukuBMin";
+}
+
+/* halaman error */
+.error-page {
+   height: 100%
+}
+
+.error-container {
+   text-align: center;
+}
+
+
+
+/* warna background */
+.bg-color-pink{
+   background-color: #FF24B5;
+}
+
+.bg-color-white{
+   background-color: #FFFFFF;
+}
+
+.bg-color-light-pink{
+   background-color: #FFEBF8;
+}
+
+/* warna text */
+.color-pink{
+   color: #FF24B5;
+}
+
+
+.color-white{
+   color: #FFFFFF;
+}
+
+.color-light-pink{
+   color: #FFEBF8;
+}
+
+/* warna placeholder */
+.placeholder-pink::placeholder{
+   color: #FF24B5;
+}
+
+.textarea-input:focus {
+      outline: none !important;
+    border:1px solid #FF24B5;
+    box-shadow: 0 0 15px pink;
+}
+
+.width-submit-button-200{
+   width: 200px;
+}
+
+.width-submit-button-300{
+   width: 300px;
+}
+
+.width-submit-button-500{
+   width: 500px;
+}
+
+
+.width-textarea-500{
+   width: 500px;
+}
+/* warna border */
+.border-color-pink{
+   border-color: #FF24B5;
+}
+
+
+.navbar-item:hover{
+   text-decoration: underline;
+}
+
+.rounded-button {
+   border-radius: 40px;
+}
+
+.font-1-4-rem{
+   font-size: 1.4rem;
+}
+
+.font-50{
+   font-size: 50px;
+}
+
+.font-40{
+   font-size: 40px;
+}
+
+.font-30{
+   font-size: 30px;
+}
+
+.font-20{
+   font-size: 20px;
+}
+
+.font-80 {
+   font-size: 80px;
+}
+
+.font-70 {
+   font-size: 70px;
+}
+
+.font-60{
+   font-size: 60px;
+}
+
+.font-100{
+   font-size: 100px;
+}
+
+.font-150{
+   font-size: 150px;
+}
+
+.font-200{
+   font-size: 200px;
+}
+.mx-6 {
+   margin-left: 3.75rem !important;
+   margin-right: 3.75rem !important;
+ }
+
+ .mx-7 {
+   margin-left: 4.5rem !important;
+   margin-right: 4.5rem !important;
+ }
+
+ .mx-8 {
+   margin-left: 5.25rem !important;
+   margin-right: 5.25rem !important;
+ }
+
+ .my-10 {
+   margin-top: 6.75rem !important;
+   margin-bottom: 6.75rem !important;
+ }
+

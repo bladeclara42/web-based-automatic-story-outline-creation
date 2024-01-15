@@ -1,0 +1,15 @@
+Crawler/
+dataset/
+fine tuning another sentences/
+frontend data/
+gpt2-ROCStories*/
+new fine tuning/
+story-three-model/
+cloze_test*
+ROCStories__spring2016*
+ROCStories_winter2017*
+frontend/model/checkpoint-200/
+frontend/model/checkpoint-1600/
+frontend/model/checkpoint-2400/
+frontend/model/gpt2*/
+frontend/app copy 2.py
